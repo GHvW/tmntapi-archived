@@ -1,7 +1,7 @@
 const express = require("express");
 
 
-exports.getAllCharacters = (dbFn) => {
+exports.getAll = (dbFn) => {
   return (req, res) => {
     dbFn()
       .then(characters => {
@@ -13,7 +13,7 @@ exports.getAllCharacters = (dbFn) => {
     }
 }
 
- exports.getCharacterById = (dbFn) => {
+ exports.getById = (dbFn) => {
   return (req, res) => {
     dbFn(req.params.id)
       .then(character => {

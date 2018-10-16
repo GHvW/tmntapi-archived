@@ -1,7 +1,7 @@
 const express = require("express");
 const { BaseDao, findAll, findById } = require("../dao");
 const Character = require("./model");
-const { getAllCharacters, getCharacterById } = require("./controller");
+const { getAll, getById } = require("./controller");
 
 const router = express.Router();
 
@@ -9,11 +9,11 @@ const bDao = new BaseDao(Character);
 const dbFindAll = findAll(bDao.model);
 const dbFindById = findById(bDao.model);
 
-const getAll = getAllCharacters(dbFindAll);
-const getById = getCharacterById(dbFindById);
+const getAllCharacters = getAll(dbFindAll);
+const getCharacterById = getById(dbFindById);
 
-router.get("/", getAll);
+router.get("/", getAllCharacters);
 
-router.get("/:id", getById);
+router.get("/:id", getCharacterById);
 
 module.exports = router;
