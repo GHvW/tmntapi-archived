@@ -1,9 +1,9 @@
 const express = require("express");
 
 
-exports.getAllCharacters = (dbPromise) => {
+exports.getAllCharacters = (dbFn) => {
   return (req, res) => {
-    dbPromise()
+    dbFn()
       .then(characters => {
         res.status(200).send(characters);
       })
@@ -13,9 +13,9 @@ exports.getAllCharacters = (dbPromise) => {
     }
 }
 
- exports.getCharacterById = (dbPromise) => {
+ exports.getCharacterById = (dbFn) => {
   return (req, res) => {
-    dbPromise(req.params.id)
+    dbFn(req.params.id)
       .then(character => {
         res.status(200).send(character);
       })

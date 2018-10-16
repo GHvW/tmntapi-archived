@@ -7,5 +7,6 @@ const characterSchema = new mongoose.Schema({
   description: String
 });
 
-const Character = mongoose.model("Character", characterSchema);
+//"character" needs to match the collection name
+const Character = mongoose.model("Character", characterSchema, "character");
 module.exports = Character;
