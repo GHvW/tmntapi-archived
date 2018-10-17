@@ -3,6 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const character = require("./character/index");
 const pizza = require("./pizza/index");
+const tech = require("./tech/index");
+const vehicle = require("./vehicle/index");
 
 const app = express();
 const router = express.Router();
@@ -15,6 +17,10 @@ mongoose.connect(db, { useNewUrlParser: true })
 router.use("/character", character);
 
 router.use("/pizza", pizza);
+
+router.use("/tech", tech);
+
+router.use("/vehicle", vehicle);
 
 app.use("/api", router);
 
