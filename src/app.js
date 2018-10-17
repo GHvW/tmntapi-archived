@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const character = require("./character/index");
+const pizza = require("./pizza/index");
 
 const app = express();
 const router = express.Router();
@@ -12,6 +13,8 @@ mongoose.connect(db, { useNewUrlParser: true })
   .catch(err => console.log(`Error connecting to Mongo DB: ${err}`));
 
 router.use("/character", character);
+
+router.use("/pizza", pizza);
 
 app.use("/api", router);
 
