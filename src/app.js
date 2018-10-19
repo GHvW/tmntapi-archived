@@ -5,6 +5,7 @@ const character = require("./character/index");
 const pizza = require("./pizza/index");
 const tech = require("./tech/index");
 const vehicle = require("./vehicle/index");
+const series = require("./series/index");
 
 const app = express();
 const router = express.Router();
@@ -21,6 +22,8 @@ router.use("/pizza", pizza);
 router.use("/tech", tech);
 
 router.use("/vehicle", vehicle);
+
+router.use("/series", series);
 
 app.use("/api", router);
 
