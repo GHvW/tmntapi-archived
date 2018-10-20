@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const techSchema = mongoose.Schema({
   name: String,
-  description: String,
   episode: String
 });
 
