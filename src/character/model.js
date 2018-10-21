@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 
 const characterSchema = new mongoose.Schema({
+  id: { type: Number, unique: true },
   name: String,
   biology: String,
-  gear: [String],
+  gear: { type: [String], default: "None" },
+  firstAppearance: String
 });
 
 //"character" needs to match the collection name

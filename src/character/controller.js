@@ -24,3 +24,10 @@ const express = require("express");
 //       });
 //   }
 // }
+
+exports.getAllHandler = (dbFn) => {
+  return (req, res) => {
+    const { name, biology, gear } = req.query;
+    
+  }
+}
