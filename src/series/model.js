@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 const seriesSchema = mongoose.Schema({
-  id: { type: Number, unique: ture },
+  id: { type: Number, unique: true },
   name: String,
   installments: [String]
 });
